@@ -80,4 +80,20 @@ public class MapTileResponse implements Parcelable {
             return new MapTileResponse[size];
         }
     };
+
+    public int getErrorCode() {
+        return mErrorCode;
+    }
+
+    public String getErrorMessage() {
+        return mErrorMessage;
+    }
+
+    public int getDataFormat() {
+        return mDataFormat;
+    }
+
+    public byte[] getTileData() {
+        return mTileData;
+    }
 }
