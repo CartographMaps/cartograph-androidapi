@@ -49,7 +49,12 @@ public class MapListResponse implements Parcelable {
         int currentVersion = in.readInt();
         int cnt = in.readInt();
         for (int i=0; i<cnt; i++) {
-            mEntries.add(new MapEntry(in.readString(), in.readString(), in.readString()));
+            MapEntry entry = new MapEntry(in.readString(), in.readString(), in.readString());
+            entry.boundingBoxTop = in.readDouble();
+            entry.boundingBoxLeft = in.readDouble();
+            entry.boundingBoxBottom = in.readDouble();
+            entry.boundingBoxRight = in.readDouble();
+            mEntries.add(entry);
         }
     }
 
@@ -61,6 +66,10 @@ public class MapListResponse implements Parcelable {
             dest.writeString(e.key);
             dest.writeString(e.name);
             dest.writeString(e.description);
+            dest.writeDouble(e.boundingBoxTop);
+            dest.writeDouble(e.boundingBoxLeft);
+            dest.writeDouble(e.boundingBoxBottom);
+            dest.writeDouble(e.boundingBoxRight);
         }
     }
 

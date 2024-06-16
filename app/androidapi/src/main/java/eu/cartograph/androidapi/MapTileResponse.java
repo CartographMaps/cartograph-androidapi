@@ -12,9 +12,10 @@ public class MapTileResponse implements Parcelable {
     private String mErrorMessage = null;
     private byte[] mTileData = null; // Warning: This must be smaller than 1MB (Android AIDL restriction).
 
+    // Same as in CartographMapInterface::ImageFormat C++ plugin API
     public final static int DATA_FORMAT_RASTER = 0; // raw png, jpeg, etc. data
     public final static int DATA_FORMAT_RGB = 1;    // RGB,RBG,RGB,... array
-    public final static int DATA_FORMAT_RGBA = 1;   // RGBA,RGBA,RGBA,... array
+    public final static int DATA_FORMAT_RGBA = 2;   // RGBA,RGBA,RGBA,... array
 
     private int mDataFormat = DATA_FORMAT_RGBA;
 
