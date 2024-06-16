@@ -20,9 +20,15 @@ public class MapListResponse implements Parcelable {
             this.name = name;
             this.description = description;
         }
-        String key; // a key identifying the map within the service
-        String name;
-        String description;
+        public String key; // a key identifying the map within the service
+        public String name;
+        public String description;
+
+        // Bounding box of the map region
+        public double boundingBoxTop = 90,
+                boundingBoxLeft = -180,
+                boundingBoxBottom = -90,
+                boundingBoxRight = 180; //lat,lon,lat,lon
     }
 
     private List<MapEntry> mEntries = new LinkedList<>();
